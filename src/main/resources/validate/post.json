@@ -1,0 +1,17 @@
+{
+  "alias": "post.info",
+  "checks": [
+    {
+      "id": "content",
+      "minLength": 0
+    },
+    {
+      "id": "accessModifierLevel",
+      "required": "0"
+    },
+    {
+      "id": "typePost",
+      "required": "0"
+    }
+  ]
+}

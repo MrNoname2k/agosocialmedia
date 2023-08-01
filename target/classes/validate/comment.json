@@ -1,0 +1,18 @@
+{
+  "alias": "comment.info",
+  "checks": [
+    {
+      "id": "content",
+      "required": "0",
+      "minLength": 1
+    },
+    {
+      "id": "idComment",
+      "required": "1"
+    },
+    {
+      "id": "idPost",
+      "required": "0"
+    }
+  ]
+}

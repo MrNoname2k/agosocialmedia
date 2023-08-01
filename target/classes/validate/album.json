@@ -1,0 +1,9 @@
+{
+  "alias": "album.info",
+  "checks": [
+    {
+      "id": "name",
+      "required": "0"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "alias": "relationship.info",
+  "checks": [
+    {
+      "id": "idUserEntityTow",
+      "required": "0"
+    }
+  ]
+}

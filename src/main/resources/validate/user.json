@@ -1,0 +1,37 @@
+{
+    "alias": "user.info",
+    "checks": [
+        {
+            "id": "firstName",
+            "required": "0",
+            "maxLength": 50
+        },
+        {
+            "id": "lastName",
+            "required": "0",
+            "maxLength": 50
+        },
+        {
+            "id": "phone",
+            "maxLength": 11
+        },
+        {
+            "id": "mail",
+            "required": "0",
+            "isEmail": "true",
+            "maxLength": 255
+        },
+        {
+            "id": "address",
+            "maxLength": 255
+        },
+        {
+            "id": "gender",
+            "maxLength": 20
+        },
+        {
+            "id": "birthDay",
+            "isDateFull": "true"
+        }
+    ]
+}

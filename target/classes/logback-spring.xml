@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<configuration>
+	<springProperty name="extension" source="logging.backup.extension" defaultValue="log"/>
+	<springProperty name="maxFileSize" source="logging.rolling-policy.max-file-size" defaultValue="50MB"/>
+	<springProperty name="maxHistory" source="logging.rolling-policy.max-history" defaultValue="30"/>
+	<springProperty name="totalSizeCap" source="logging.rolling-policy.total-size-cap" defaultValue="3GB"/>
+	<springProperty name="logPath" source="logging.path" defaultValue="../log"/>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logPath}/mnt/disks/api/log_bk/API_FULL.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/mnt/disks/api/log_bk/API_FULL_%d{yyyyMMdd}.%i.${extension}</FileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${maxFileSize}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>${maxHistory}</maxHistory>
+			<totalSizeCap>${totalSizeCap}</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+
+	<root>
+        <!-- <root level="INFO"> -->
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root> 
+</configuration>

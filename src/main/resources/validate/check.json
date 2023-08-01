@@ -1,0 +1,16 @@
+{
+  "alias": "check.info",
+  "checks": [
+    {
+      "id": "mail",
+      "required": "0",
+      "isEmail": "true",
+      "maxLength": 255
+    },
+    {
+      "id": "code",
+      "required": "0",
+      "maxLength": 5
+    }
+  ]
+}
